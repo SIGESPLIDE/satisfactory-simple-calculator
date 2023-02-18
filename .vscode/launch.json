@@ -2,7 +2,6 @@
     "configurations": [
         {
             "name": "Python: File",
-            "name": "Python",
             "console": "externalTerminal",
             "type": "python",
             "request": "launch",
