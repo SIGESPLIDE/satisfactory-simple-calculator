@@ -1,3 +1,5 @@
+#! usr/bin/env python3.9
+
 import re
 
 # -----採鉱機-----
@@ -43,7 +45,7 @@ else:
     print("*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*")
     if re.search('採鉱機', text):
         print("オーバークロック率="+"["+str(OCrate)+"%]")
-        if re.search('mk1|Mk1|mK1|MK1|ｍｋ１|Mk１', text):
+        if re.search('mk1', text, re.IGNORECASE):
             if '低' in text:
                 x = 採鉱機Mk1産出量*低純度*OCrate/100
                 print("採鉱機Mk1の低純度資源ノードでの産出量は 稼働率"+str(OCrate)+"%の時[", x, "/m]")
@@ -53,7 +55,7 @@ else:
             if '高' in text:
                 x = 採鉱機Mk1産出量*高純度*OCrate/100
                 print("採鉱機Mk1の高純度資源ノードでの産出量は 稼働率"+str(OCrate)+"%の時[", x, "/m]")
-        if re.search('mk2|Mk2|mK2|MK2|ｍｋ２|Mk２', text):
+        if re.search('mk2', text, re.IGNORECASE):
             if '低' in text:
                 x = 採鉱機Mk2産出量*低純度*OCrate/100
                 print("採鉱機Mk2の低純度資源ノードでの産出量は 稼働率"+str(OCrate)+"%の時[", x, "/m]")
@@ -63,7 +65,7 @@ else:
             if '高' in text:
                 x = 採鉱機Mk2産出量*高純度*OCrate/100
                 print("採鉱機Mk2の高純度資源ノードでの産出量は 稼働率"+str(OCrate)+"%の時[", x, "/m]")
-        if re.search('mk3|Mk3|mK3|MK3|ｍｋ３|Mk３', text):
+        if re.search('mk3', text, re.IGNORECASE):
             if '低' in text:
                 x = 採鉱機Mk3産出量*低純度*OCrate/100
                 print("採鉱機Mk3の低純度資源ノードでの産出量は 稼働率"+str(OCrate)+"%の時[", x, "/m]")
@@ -74,7 +76,7 @@ else:
                 x = 採鉱機Mk3産出量*高純度*OCrate/100
                 print("採鉱機Mk3の高純度資源ノードでの産出量は 稼働率"+str(OCrate)+"%の時", x, "/m")
     else:
-        print("!^-^-^-^-^-^-^-^_Error_^-^-^-^-^-^-^-^!\n各要素を正しく入力してください\nヒント:各要素に含まれる文字は、'採鉱機' 'Mk(1,2,3)' '(低,中,高)'純度 です\n")
+        print("!^-^-^-^-^-^-^-^_Error_^-^-^-^-^-^-^-^!\n各要素を正しく入力してください\nヒント:各要素に含まれる文字は、'採鉱機' , 'Mk(1,2,3)' , '(低,中,高)'純度' , 'オーバークロック率(0%-250%)' です\n")
 
     # -----最低コンベアベルト必要量-----
 
